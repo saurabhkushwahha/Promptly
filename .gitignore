@@ -1,0 +1,39 @@
+# Python
+__pycache__/
+*.py[cod]
+*.egg
+*.egg-info/
+dist/
+build/
+*.log
+
+# Django
+*.sqlite3
+*.db
+.env
+.env.*
+
+# VS Code
+.vscode/
+
+# macOS / Linux
+.DS_Store
+
+# Poetry
+poetry.lock
+# If you use virtualenvs outside project
+.env/
+.venv/
+# This ignores Poetry-managed venvs in cache
+# (do NOT track this!)
+/C:/Users/**/AppData/Local/pypoetry/Cache/virtualenvs/
+
+# Pytest / Coverage
+.coverage
+htmlcov/
+.pytest_cache/
+
+# Others
+*.bak
+*.tmp
+*.swp
