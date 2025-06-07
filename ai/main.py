@@ -1,4 +1,4 @@
-from app import AgentState
+from ai.app import AgentState
 from supervisor.supervisor_agent import supervisor_agent
 import logging
 

@@ -47,8 +47,8 @@ INSTALLED_APPS = [
     'corsheaders',
     'rest_framework',
     'rest_framework_simplejwt',
-    "drf_spectacular",
-    "drf_spectacular_sidecar",
+    'drf_spectacular',
+    'drf_spectacular_sidecar',
 
 ]
 
