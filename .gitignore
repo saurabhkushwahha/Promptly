@@ -37,3 +37,25 @@ htmlcov/
 *.bak
 *.tmp
 *.swp
+# Ignore environment variables
+.env
+
+# Python cache
+__pycache__/
+*.py[cod]
+
+# VSCode or IDE settings
+.vscode/
+.idea/
+
+# Byte-compiled / optimized / DLL files
+*.pyc
+*.pyo
+*.pyd
+
+
+# Mac or system files
+.DS_Store
+Thumbs.db
+
+
