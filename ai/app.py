@@ -5,10 +5,8 @@ from dotenv import load_dotenv
 import os
 import logging
 
-# Load environment variables
 load_dotenv()
 
-# Setup logging
 logging.basicConfig(
     level=logging.INFO,
     format="%(asctime)s [%(levelname)s] %(message)s",
@@ -18,7 +16,6 @@ logging.basicConfig(
     ]
 )
 
-# Initialize LLM
 GROQ_API_KEY = os.getenv("GROQ_API_KEY")
 
 try:
@@ -32,7 +29,6 @@ except Exception as e:
     logging.critical(f"Failed to initialize LLM: {e}")
     raise RuntimeError("LLM initialization failed. Check your API key and environment setup.")
 
-# TypedDict for state management
 class AgentState(TypedDict):
     route: str
     query: str
@@ -43,8 +39,6 @@ class AgentState(TypedDict):
     audio_full_text:Optional[str]
     audio_text:Optional[str]
 
-
-# Safe LLM invocation wrapper
 def safe_invoke(prompt: HumanMessage) -> str:
     try:
         response = llm.invoke(prompt)
