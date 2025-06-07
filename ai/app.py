@@ -40,6 +40,9 @@ class AgentState(TypedDict):
     document_text: Optional[str]
     full_text: Optional[str]
     general_text: Optional[str]
+    audio_full_text:Optional[str]
+    audio_text:Optional[str]
+
 
 # Safe LLM invocation wrapper
 def safe_invoke(prompt: HumanMessage) -> str:
