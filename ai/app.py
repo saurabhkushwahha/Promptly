@@ -1,6 +1,6 @@
 from typing import TypedDict, Optional
 from langchain_groq import ChatGroq
-from langchain_core.messages import HumanMessage
+from langchain_core.messages import BaseMessage
 from dotenv import load_dotenv
 import os
 import logging
@@ -39,9 +39,9 @@ class AgentState(TypedDict):
     audio_full_text:Optional[str]
     audio_text:Optional[str]
 
-def safe_invoke(prompt: HumanMessage) -> str:
+def safe_invoke(messages: list[BaseMessage]) -> str:
     try:
-        response = llm.invoke(prompt)
+        response = llm.invoke(messages)
         return response.content.strip()
     except Exception as e:
         logging.error(f"LLM invocation failed: {e}")

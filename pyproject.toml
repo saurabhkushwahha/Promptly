@@ -3,20 +3,30 @@ name = "promptly"
 version = "0.1.0"
 description = ""
 authors = [
-    {name = "saurabhkushwahha",email = "saurabhkushwahhaa@gmail.com"}
+    { name = "saurabhkushwahha", email = "saurabhkushwahhaa@gmail.com" }
 ]
-readme = "README.md"
-requires-python = ">=3.13"
-dependencies = [
-    "django (>=5.2.1,<6.0.0)",
-    "djangorestframework (>=3.16.0,<4.0.0)",
-    "djangorestframework-simplejwt (>=5.5.0,<6.0.0)",
-    "drf-spectacular (>=0.28.0,<0.29.0)",
-    "drf-spectacular-sidecar (>=2025.6.1,<2026.0.0)",
-    "django-cors-headers (>=4.7.0,<5.0.0)",
-]
+requires-python = ">=3.10,<4.0"
 
+dependencies = [
+    "django>=5.2.1,<6.0.0",
+    "djangorestframework>=3.16.0,<4.0.0",
+    "djangorestframework-simplejwt>=5.5.0,<6.0.0",
+    "drf-spectacular>=0.28.0,<0.29.0",
+    "drf-spectacular-sidecar>=2025.6.1,<2026.0.0",
+    "django-cors-headers>=4.7.0,<5.0.0",
+    "langchain==0.3.25",
+    "langchain_core==0.3.64",
+    "langchain_groq==0.3.2",
+    "langgraph==0.4.8",
+    "openai-whisper @ git+https://github.com/openai/whisper.git",
+    "Pillow==11.2.1",
+    "pytesseract==0.3.13",
+    "python-dotenv==1.1.0"
+]
 
 [build-system]
 requires = ["poetry-core>=2.0.0,<3.0.0"]
 build-backend = "poetry.core.masonry.api"
+
+[tool.poetry]
+package-mode = false

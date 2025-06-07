@@ -7,7 +7,7 @@ from drf_spectacular.utils import extend_schema
 from .serializers import PromptSerializer, ResponseSerializer
 
 # Import the function that processes the AI prompt
-from ai.main import process_promptly_ai
+from ai.main import run_promptly
 
 
 
@@ -22,6 +22,6 @@ class AIChatAPIView(APIView):
         if serializer.is_valid():
             prompt = serializer.validated_data['prompt']
             file_path = serializer.validated_data.get('file_path')  # This is optional
-            ai_response = process_promptly_ai(query=prompt, file_path=file_path)
+            ai_response = run_promptly(query=prompt, file_path=file_path)
             return Response({"response": ai_response}, status=status.HTTP_200_OK)
         return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)

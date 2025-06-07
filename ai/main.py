@@ -1,7 +1,7 @@
 from ai.app import AgentState
-from supervisor.supervisor_agent import supervisor_agent
+from ai.supervisor.supervisor_agent import supervisor_agent
 import logging
-from graph_builder import graph
+from ai.graph_builder import graph
 
 logging.basicConfig(
     level=logging.INFO,

@@ -1,6 +1,6 @@
 from langchain.tools import tool
 from langchain_core.messages import HumanMessage
-from app import llm
+from ai.app import llm
 import logging
 
 @tool

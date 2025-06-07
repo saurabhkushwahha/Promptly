@@ -1,4 +1,4 @@
-from app import AgentState, safe_invoke
+from ai.app import AgentState, safe_invoke
 from langchain_core.messages import HumanMessage
 import logging
 
@@ -9,7 +9,7 @@ def supervisor_agent(state: AgentState) -> AgentState:
     """
 
     query = state["query"]
-
+    print(f"Supervisor agent received query: {query}")
     try:
         classification_prompt = f"""
         You are the routing agent for Promptly, a multi-functional assistant app with various capabilities.
@@ -34,7 +34,7 @@ def supervisor_agent(state: AgentState) -> AgentState:
         "{query}"
         """
 
-        agent_choice = safe_invoke(HumanMessage(content=classification_prompt)).strip().lower()
+        agent_choice = safe_invoke([HumanMessage(content=classification_prompt)]).strip().lower()
         route_agents = {"account_agent", "video_analyzer", "audio_analyzer"}
 
         if agent_choice in route_agents:
@@ -55,7 +55,7 @@ def supervisor_agent(state: AgentState) -> AgentState:
 
         Reply to the user now.
         """
-            general_response = safe_invoke(HumanMessage(content=general_response_prompt))
+            general_response = safe_invoke([HumanMessage(content=general_response_prompt)])
             state["route"] = "supervisor_agent"
             state["general_text"] = general_response
 

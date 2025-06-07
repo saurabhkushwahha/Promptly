@@ -1,9 +1,9 @@
 import logging
 from langgraph.graph import StateGraph
-from app import AgentState
-from supervisor.supervisor_agent import supervisor_agent
-from agents.account_agent import account_agent
-from agents.audio_analyzer import audio_analyzer
+from ai.app import AgentState
+from ai.supervisor.supervisor_agent import supervisor_agent
+from ai.agents.account_agent import account_agent
+from ai.agents.audio_analyzer import audio_analyzer
 
 logger = logging.getLogger(__name__)
 logging.basicConfig(

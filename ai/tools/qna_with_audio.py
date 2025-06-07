@@ -1,4 +1,4 @@
-from app import llm
+from ai.app import llm
 from langchain.tools import tool
 import logging
 
